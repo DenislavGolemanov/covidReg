@@ -6,6 +6,8 @@
 body {
   margin: 0;
   font-family: 'Arial' ;
+  width: 100vw;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
