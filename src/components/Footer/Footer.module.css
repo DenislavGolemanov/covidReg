@@ -1,0 +1,47 @@
+
+  .sub{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      width: 100%;
+      /* height: 18vh; */
+      min-height: 9vh;
+      background-color: white;
+      /* box-shadow: -1px 15px 36px -7px rgba(0,0,0,0.37); */
+      position: relative;
+      z-index: 100;
+   }
+
+   .creator {
+       display: inline;
+       color: rgb(102, 96, 96);
+       text-decoration: underline;
+       text-transform: uppercase;
+       font-size: 12px;
+       align-self: flex-end;
+   }
+
+
+   .logo {
+
+       width: 20vw;
+       filter: grayscale(100%) blur(5px) opacity(20%);
+       padding: 10px;
+
+   }
+
+  
+
+   .registration a:hover {
+
+        font-style: italic;
+        color: rgb(163, 53, 53);
+        transform: translate(10px);
+        transition: 0.5s;
+        /* transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1); */
+   }
+
+
+
+
+  
