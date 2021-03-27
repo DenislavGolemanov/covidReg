@@ -1,37 +1,61 @@
 import style from '../Counter/Counter.module.css'
+import covidService from '../../services/covidService'
 
-function Counter(props) {
+import {Component} from 'react'
+
+class Counter extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      confirmed : '',
+      deaths: '',
+      recovered: '',
+    }
+  }
+
+  componentDidMount() {
+
+    covidService.getInfo()
+      .then(res=> this.setState({...res}))
+      .then((res)=> console.log(this.state))
+  }
+
+  render(){
 
     return (
 
-        <div className={style.counter}>
+      <div className={style.counter}>
 
-        <table className={style.table}>
+      <table className={style.table}>
 
-        <div className={style.info}>
+      <div className={style.info}>
 
-          <span>Статистика</span>
-            <p>Актуална информация към 27.03.2021г.</p>
-          </div>
+        <span>Статистика</span>
+          <p>Актуална информация към {this.state.date}г.</p>
+        </div>
 
-            <tr>
-              <th>Потвърдени</th>
-              <th>Починали</th>
-              <th>Излекувани</th>
-            </tr>
+          <tr>
+            <th>Потвърдени</th>
+            <th>Починали</th>
+            <th>Излекувани</th>
+          </tr>
 
-            <tr>
-              <td className= {style.orange}>325 233</td>
-              <td className={style.red}>12 601</td>
-              <td className={style.green}>24 451</td>
-            </tr>
-            
-        </table>
-      
+          <tr>
+            <td className= {style.orange}>{this.state.confirmed}</td>
+            <td className={style.red}>{this.state.deaths}</td>
+            <td className={style.green}>{this.state.recovered}</td>
+          </tr>
+          
+      </table>
+    
 
-    </div>
-    )
-
+  </div>
+  )
+    
+  }
 }
+
 
 export default Counter

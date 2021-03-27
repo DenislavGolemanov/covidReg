@@ -13,9 +13,9 @@ function App() {
 
       <Header/>
 
-      <Info />
-
       <Counter />
+
+      <Info />
 
       <Footer />
 
