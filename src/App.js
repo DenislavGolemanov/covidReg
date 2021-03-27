@@ -1,24 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+
+import Header from '../src/components/Header/Header'
 
 function App() {
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Header/>
+
+      <div className="counter">
+
+        <span>Статистика</span>
+        <p>Актуална информация към 27.03.2021г.</p>
+
+        {/* potvurdeni , smurtnost izlekuvani */}
+
+        <table>
+            <tr>
+              <td>Потвърдени</td>
+              <td>Починали</td>
+              <td>Излекувани</td>
+            </tr>
+            <tr>
+              <td>325 233</td>
+              <td>12 601</td>
+              <td>24 451</td>
+            </tr>
+        </table>
+
+      </div>
+
     </div>
+    
+
   );
 }
 
