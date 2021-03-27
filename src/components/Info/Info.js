@@ -1,5 +1,7 @@
 import style from '../Info/Info.module.css'
 
+import {Link} from 'react-router-dom'
+
 function Info(props) {
 
 
@@ -24,11 +26,11 @@ function Info(props) {
                 Добре дошли в единната здравна информационна система на Министерството на здравеопазването на Република България
               </p>
 
-              <a href="#">
+              <Link to="/about">
                   <div className={style.redButton}>
                         Повече за системата
                   </div>
-              </a>
+              </Link>
                 
             </div>
 

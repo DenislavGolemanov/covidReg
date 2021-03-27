@@ -1,18 +1,29 @@
+/* .wrapper {
+
+  position: fixed;
+  top: 100;
+  width: 100%
+
+} */
+
 .header {
+
+    position: fixed;
+    top: 100;
+    width: 100%;
 
     display: flex;
     flex-flow: row wrap;
-  
-    min-height: 9vh;
-    width: 100%;
-    padding: 30px 0px;
-    background-color: #F2F7F6;
-    border-bottom: 1.8px solid rgb(155, 216, 147);
-    justify-content: flex-end;
+
+    min-height: 8vh;
+    background-color: white;
+    
+    justify-content: center;
+    box-shadow: -1px 15px 36px -7px rgba(0,0,0,0.37);
   }
   
   .logos {
-    width: 90%;
+    width: 80%;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -20,19 +31,24 @@
   }
   
   .logos img {
-    padding: 0px 53px;
+    padding: 0px 130px 0px 0px;
     height: 90%;
   }
 
   .sub{
+
+      min-height: 10vh;
+      width: 100%;
+      padding: 30px 0px;
+
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
-      width: 100%;
+      /* width: 100%; */
       /* height: 18vh; */
-      min-height: 9vh;
-      background-color: white;
-      box-shadow: -1px 15px 36px -7px rgba(0,0,0,0.37);
+      /* min-height: 9vh; */
+      background-color: #F2F7F6;
+      border-bottom: 1.8px solid rgb(155, 216, 147);
       position: relative;
       z-index: 100;
    }
