@@ -20,7 +20,11 @@ class Registration extends Component {
 
     render() {
 
-        let menuOptions = ['Лични данни' , 'Предпочитана ваксина' , 'Ваксинационен център' , 'Час за ваксинация'];
+        let menuOptions =  [{name: 'Лични данни' , path: '/registration/personal-record'} , 
+                            {name: 'Предпочитана ваксина' , path: '/registration/vaccine'} , 
+                            {name: 'Ваксинационен център' , path: '/registration/location'}, 
+                            {name: 'Час за ваксинация' , path: '/registration/time'}
+                        ];
 
         return (
 

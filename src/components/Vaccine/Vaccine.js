@@ -10,7 +10,11 @@ import Button from '../commonComponents/Button/Button'
 
 function Vaccine(props) {
 
-    let menuOptions = ['Лични данни' , 'Предпочитана ваксина' , 'Ваксинационен център' , 'Час за ваксинация']
+    let menuOptions =  [{name: 'Лични данни' , path: '/registration/personal-record'} , 
+                            {name: 'Предпочитана ваксина' , path: '/registration/vaccine'} , 
+                            {name: 'Ваксинационен център' , path: '/registration/location'}, 
+                            {name: 'Час за ваксинация' , path: '/registration/time'}
+                        ];
 
     return(
         <div className="wrapper">
@@ -48,17 +52,19 @@ function Vaccine(props) {
 
                 </div>
 
+                <section className={style.warning}>
+                    <div className={style.red}>!</div>
+                    <div className={style.pink}>
+                        Маркираният избор ще гарантира по-добро планиране на доставките, но молим да вземете предвид, че решението за вида на ваксината, която ще Ви бъде поставена ще бъде взето на място от имунизиращия лекар на база медицински преглед и наличността на ваксини във ваксинационния център.
+                    </div>
+                </section>
 
-                        <Button name={'Продължи'} />
+
+                <Button name={'Продължи'} />
+
+                
             </form>
 
-            
-            <section className={style.warning}>
-                <div className={style.red}>!</div>
-                <div className={style.pink}>
-                    Маркираният избор ще гарантира по-добро планиране на доставките, но молим да вземете предвид, че решението за вида на ваксината, която ще Ви бъде поставена ще бъде взето на място от имунизиращия лекар на база медицински преглед и наличността на ваксини във ваксинационния център.
-                </div>
-            </section>
 
             
 
