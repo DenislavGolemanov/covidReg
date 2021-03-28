@@ -6,6 +6,7 @@ function InputField(props) {
 
     return(
 
+
         <input className={style.inputField} placeholder={placeholder}  type={type} name={name}/>
 
     )

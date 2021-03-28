@@ -45,45 +45,10 @@
     justify-content: space-between;
 }
 
-.row{
-
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-}
 
 
 
-  .select {
-    border-radius: 5px;
-    border: 2px solid #008000;
-    padding: 10px 18px;
-    height: 9.3vh;
-    font-size: 30px;
-    width: 33%;
-  }
 
-  .button {
-      display: inline-block;
-      width: 30%;
-      padding: 2vh 2vh;
-      font-size: 29px;
-      text-transform: uppercase;
-      text-align: start;
-      align-self: flex-end;
-      border-radius: 10px;
-      border: transparent;
-      background-color:#00664D;
-      color: white;
-      font-stretch: condensed;
-  }
-
-  .button:hover {
-    transition: 0.3s;
-    background-color: #013226 ;
-
-  }
 
 
 

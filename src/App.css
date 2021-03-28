@@ -1,0 +1,22 @@
+                    .row{
+
+                        width: 100%;
+                        display: flex;
+                        flex-flow: row wrap;
+                        justify-content: space-between;
+                    }
+
+
+                    .wrapper {
+
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding-top: 100px;
+                    }
+
+                    .content {
+
+                        width: 70%;
+                    }

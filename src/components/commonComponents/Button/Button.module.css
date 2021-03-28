@@ -1,0 +1,21 @@
+.button {
+  height: 9vh;
+  display: inline-block;
+  width: 30%;
+  padding: 2vh 2vh;
+  font-size: 29px;
+  text-transform: uppercase;
+  text-align: start;
+  align-self: flex-end;
+  border-radius: 10px;
+  border: transparent;
+  background-color:#00664D;
+  color: white;
+  font-stretch: condensed;
+}
+
+.button:hover {
+transition: 0.3s;
+background-color: #013226 ;
+
+}

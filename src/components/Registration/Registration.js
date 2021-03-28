@@ -1,10 +1,13 @@
 import style from '../Registration/Registration.module.css'
 
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 import Menu from '../Menu/Menu'
 import InputField from '../commonComponents/InputField/InputField'
 import SelectItem from '../commonComponents/SelectItem/SelectItem'
+import Button from '../commonComponents/Button/Button'
+
 
 
 let uniqid = require('uniqid')
@@ -25,8 +28,8 @@ class Registration extends Component {
                 <div className={style.content}>
 
                 <section className={style.registred}>
-                    <p>Вече имам резервация</p> 
-                    <a className={style.link} href="#">преглед</a>                  
+                    <p>Вече имам резервация</p>
+                    <Link to="/reservation" className={style.link}>преглед</Link>
                 </section>
 
                 <Menu data = {menuOptions}/>
@@ -40,7 +43,7 @@ class Registration extends Component {
 
 
                     <form >
-                        <section className={style.row}>
+                        <section className="row">
 
                             <InputField key={uniqid()} data={["Име" , "text" , "firstName"]}/>
                             <InputField key={uniqid()} data={["Презиме" , "text" , "secondName"]}/>
@@ -49,7 +52,7 @@ class Registration extends Component {
 
                         </section>
 
-                        <section className={style.row}>
+                        <section className="row">
 
                             <SelectItem 
                                 data= {
@@ -63,7 +66,7 @@ class Registration extends Component {
 
                         </section>
 
-                        <section className={style.row}>
+                        <section className="row">
 
                             <InputField key={uniqid()} data={["Номер на лична карта" , "number" , "cardNum"]}/>
                             <InputField key={uniqid()} data={["Дата на издаване" , "date" , "dateInit"]}/>
@@ -82,7 +85,7 @@ class Registration extends Component {
                             <span>Kooрдинати за връзка с вас</span>
                         </section>
 
-                        <section className={style.row}>
+                        <section className="row">
 
                             <SelectItem 
                                 data= {
@@ -92,11 +95,11 @@ class Registration extends Component {
                                 }
                             />
                             <InputField key={uniqid()} data={["Телефон" , "number" , "telNumber"]}/>
-                            <InputField key={uniqid()} data={["Email" , "date" , "email"]}/>
+                            <InputField key={uniqid()} data={["Email" , "email" , "email"]}/>
                 
                         </section>
 
-                        <input className={style.button} type="submit" value="Продължи" />
+                        <Button name="Продължи"/>
 
 
 
