@@ -20,3 +20,31 @@
 
                         width: 70%;
                     }
+
+
+                    .small {
+
+                        font-size: 20px;
+                    }
+
+                    .registred {
+
+                        font-size: 20px;
+                    
+                        display: flex;
+                    
+                        margin: 20px 0px;
+                    } 
+                    
+                    .registred p {
+                        margin: 0px 6px 0 0 ;
+                    }
+                    
+                    .link {
+                    
+                        margin-left: 30;
+                        text-decoration: underline;
+                        color: red;
+                    
+                    } 
+                    

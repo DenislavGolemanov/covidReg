@@ -13,7 +13,7 @@ function Header(props) {
                 <div className={style.registration}>
                     <span>Начало</span>
 
-                    <Link to="/registration">COVID-19 Регистрация за ваксинация</Link>
+                    <Link to="/registration/personal-record">COVID-19 Регистрация за ваксинация</Link>
                 </div>
             </div>
 

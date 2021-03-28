@@ -27,9 +27,9 @@ class Registration extends Component {
             <div className={style.wrapper}>
                 <div className={style.content}>
 
-                <section className={style.registred}>
+                <section className="registred">
                     <p>Вече имам резервация</p>
-                    <Link to="/reservation" className={style.link}>преглед</Link>
+                    <Link to="/reservation" className="link">преглед</Link>
                 </section>
 
                 <Menu data = {menuOptions}/>
