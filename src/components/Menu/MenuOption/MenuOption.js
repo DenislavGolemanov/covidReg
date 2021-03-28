@@ -2,13 +2,13 @@ import style from '../MenuOption/MenuOption.module.css'
 
 function MenuOption(props) {
 
-    console.log(props.data)
+    // console.log(props.counter + 'from MEnuOption')
 
     return(
         <div className={style.menuOption}>
 
                     <div className={style.num}>
-                        1
+                        {props.counter}
                     </div>
 
                     <div className={style.value}>

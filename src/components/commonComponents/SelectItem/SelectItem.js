@@ -12,7 +12,7 @@ function SelectItem(props) {
     
             })
 
-    console.log(listedOptions)
+    // console.log(listedOptions)
 
 
     return(

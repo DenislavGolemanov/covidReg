@@ -4,13 +4,16 @@ import MenuOption from '../Menu/MenuOption/MenuOption'
 
     function Menu(props) {
 
-        console.log(props.data)
+        let counter = 0;
 
         let MenuSet = props.data.map(opt =>{
+
+            counter ++
 
             return(
                 <MenuOption
                     data = {opt}
+                    counter = {counter}
                 />
             )
         })
