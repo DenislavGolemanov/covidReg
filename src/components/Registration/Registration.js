@@ -3,6 +3,11 @@ import style from '../Registration/Registration.module.css'
 import {Component} from 'react'
 
 import Menu from '../Menu/Menu'
+import InputField from '../commonComponents/InputField/InputField'
+import SelectItem from '../commonComponents/SelectItem/SelectItem'
+
+
+let uniqid = require('uniqid')
 
 class Registration extends Component {
 
@@ -26,52 +31,79 @@ class Registration extends Component {
 
                 <Menu data = {menuOptions}/>
 
-                {/* <menu>
-                    <div className={style.menuOption}>
+                <section className={style.small}>
+                    <span>Вашата Самоличност</span>
+                    <p>Моля, въведете Вашите имена на кирилица, както са изписани в личната Ви карта.</p>
+                </section>
+                
+                <section className= {style.form}>
 
-                        <div className={style.num}>
-                            1
-                        </div>
 
-                        <div className={style.value}>
-                            Лични данни
-                        </div>
-                    </div>
+                    <form >
+                        <section className={style.row}>
 
-                    <div className={style.menuOption}>
+                            <InputField key={uniqid()} data={["Име" , "text" , "firstName"]}/>
+                            <InputField key={uniqid()} data={["Презиме" , "text" , "secondName"]}/>
+                            <InputField key={uniqid()} data={["Фамилия" , "text" , "lastName"]}/>
 
-                        <div className={style.num}>
-                            2
-                        </div>
 
-                        <div className={style.value}>
-                            Предпочитана ваксина
-                        </div>
-                    </div>
+                        </section>
 
-                    <div className={style.menuOption}>
+                        <section className={style.row}>
 
-                        <div className={style.num}>
-                            3
-                        </div>
+                            <SelectItem 
+                                data= {
+                                    [
+                                        uniqid() , 'meanOfSignature' , 'ЕГН/ЛНЧ' , [ 'EGN' , 'LNC' ]
+                                    ]
+                                }
+                            />
+                            <InputField key={uniqid()} data={["ЕГН" , "number" , "ID"]}/>
+                            <InputField key={uniqid()} data={["Дата на раждане" , "date" , "dateBirth"]}/>
 
-                        <div className={style.value}>
-                            Ваксинационен център
-                        </div>
-                    </div>
+                        </section>
 
-                    <div className={style.menuOption}>
+                        <section className={style.row}>
 
-                        <div className={style.num}>
-                            4
-                        </div>
+                            <InputField key={uniqid()} data={["Номер на лична карта" , "number" , "cardNum"]}/>
+                            <InputField key={uniqid()} data={["Дата на издаване" , "date" , "dateInit"]}/>
 
-                        <div className={style.value}>
-                            Час за ваксинация
-                        </div>
-                    </div>
-                </menu> */}
+                            <SelectItem 
+                                data= {
+                                    [
+                                        uniqid() , 'city' , 'Meстоживеене' , [ 'Ruse' , 'Varna' , 'Plovdiv' , 'Sofia' ]
+                                    ]
+                                }
+                            />
+                        </section>
 
+
+                        <section className={style.small}>
+                            <span>Kooрдинати за връзка с вас</span>
+                        </section>
+
+                        <section className={style.row}>
+
+                            <SelectItem 
+                                data= {
+                                    [
+                                        uniqid() , 'meanOfContact' , 'Телефон/Имейл' , [ 'Phone' , 'Email' ]
+                                    ]
+                                }
+                            />
+                            <InputField key={uniqid()} data={["Телефон" , "number" , "telNumber"]}/>
+                            <InputField key={uniqid()} data={["Email" , "date" , "email"]}/>
+                
+                        </section>
+
+                        <input className={style.button} type="submit" value="Продължи" />
+
+
+
+                    </form>
+
+
+                </section>
 
 
             </div>

@@ -1,0 +1,42 @@
+.inputField {
+    /* flex: 1 1 auto; */
+    width: 30%;
+    /* margin: 10px; */
+    border-radius: 5px;
+    border: 2px solid #008000;
+    padding: 10px 18px;
+    height: 7vh;
+    font-weight: 800;
+    font-stretch: condensed;
+    font-size: 30px;
+}
+
+input:focus {
+    transition: 0.2s;
+    border: 6px solid #BFDEFF;
+}
+
+   input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: "Helvetica", arial, sans-serif;
+    font-size: 18px;
+    border: 2px solid #008000;
+    width: 32%;
+    height: 8vh;
+    padding:5px;
+    display: inline-block !important;
+    visibility: visible !important;
+} 
+
+ /* input[type='date'] {
+    color: transparent;
+
+  } */
+
+input[type='date']:after {
+    font-size: 30px;
+    content: attr(placeholder);
+    color: gray;
+
+  } 
