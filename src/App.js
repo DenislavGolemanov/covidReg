@@ -6,6 +6,8 @@ import Header from '../src/components/Header/Header'
 import Footer from '../src/components/Footer/Footer'
 import HomeView from '../src/components/HomePage/HomePage'
 import About from '../src/components/About/About'
+import Registration from '../src/components/Registration/Registration'
+
 
 
 
@@ -19,7 +21,7 @@ function App() {
       <Switch>
           <Route path="/" exact component={HomeView} />
           <Route path="/about" component={About} />
-          <Route path="/registration" component="HomeView" />
+          <Route path="/registration" component={Registration} />
       </Switch>
 
       <Footer />

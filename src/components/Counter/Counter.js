@@ -19,7 +19,7 @@ class Counter extends Component {
 
     covidService.getInfo()
       .then(res=> this.setState({...res}))
-      .then((res)=> console.log(this.state))
+      // .then((res)=> console.log(this.state))
   }
 
   render(){
