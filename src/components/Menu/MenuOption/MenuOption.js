@@ -1,28 +1,46 @@
 import style from '../MenuOption/MenuOption.module.css'
 
 
-import {Link} from 'react-router-dom'
 
 function MenuOption(props) {
 
-    // console.log(props.counter + 'from MEnuOption')
+    console.log()
+    console.log(props.data.path)
 
-    return(
-        <Link to={props.data.path} style={{ textDecoration: 'none'  , color: 'black' , flex: '1 1 auto'}}>
 
-                <div className={style.menuOption}>
+    if(window.location.pathname == props.data.path) {
+        return(
+        
+            <div className={style.menuOption , style.selected} >
 
-                <div className={style.num}>
-                    {props.counter}
-                </div>
+            <div className={style.num}>
+                {props.counter}
+            </div>
 
-                <div className={style.value}>
-                    {props.data.name}
-                </div>
-                </div>
+            <div className={style.value}>
+                {props.data.name}
+            </div>
+            </div>
+            )
 
-        </Link>
-    )
+    }
+
+    else return (
+        <div className={style.menuOption} >
+
+            <div className={style.num}>
+                {props.counter}
+            </div>
+
+            <div className={style.value}>
+                {props.data.name}
+            </div>
+            </div>
+            )
+    
+
+
+    
 }
 
 export default MenuOption
