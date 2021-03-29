@@ -4,12 +4,24 @@ function InputField(props) {
 
     let [placeholder , type , name] = props.data;
 
-    return(
+    // let setValue = props.value? props.value : '';
 
+    if(props.value) {
+
+        return(
+
+
+            <input className={style.inputField} placeholder={placeholder}  type={type} name={name} defaultValue={props.value}/>
+    
+        )
+        
+    } else return (
 
         <input className={style.inputField} placeholder={placeholder}  type={type} name={name}/>
 
     )
+
+
 }
 
 
