@@ -51,9 +51,6 @@ function Registration({history}) {
             meanOfContact,
             } = e.target
 
-        // console.log(meanOfSignature.value)
-        // console.log(city.value)
-        // console.log(meanOfContact.value)
 
 
         let localObject = {'firstName': firstName.value , 'secondName': secondName.value , 'lastName': lastName.value,

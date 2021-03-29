@@ -1,6 +1,7 @@
 import style from '../Vaccine/Vaccine.module.css'
 
 import {Link} from 'react-router-dom'
+import React from 'react'
 
 import Menu from '../Menu/Menu'
 import Button from '../commonComponents/Button/Button'
@@ -8,13 +9,68 @@ import Button from '../commonComponents/Button/Button'
 
 
 
-function Vaccine(props) {
+function Vaccine({history}) {
+
+    const [value, setValue] = React.useState(
+
+    localStorage.getItem('tempStoring') || '');
+    
+    let temp='';
+
+    if( value != '') {
+
+        temp = JSON.parse(value)
+
+        // if(temp.vaccinePreference) {
+            
+        //     let inputs = Array.from(document.getElementsByTagName('INPUT'))
+
+        //    inputs.forEach((input)=> {if(input.value == temp.vaccinePreference) {
+
+
+        //     this.setState({
+        //         checked: true
+        //     })
+
+        //     input.checked = true;
+
+        //      console.log(input.checked)
+            
+
+        //    } else input.checked = false
+        // })
+
+        // }
+
+    }   
+
+    const onVaccinelDataSubmit = (e) => {
+        	
+        e.preventDefault()
+
+        let inputs = Array.from(document.getElementsByTagName('INPUT'))
+        
+        inputs.forEach((button) =>  {
+
+            if(button.checked) {
+
+                temp.vaccinePreference = button.value
+
+                localStorage.setItem('tempStoring', JSON.stringify(temp));
+
+            }
+
+            // history.push('/registration/')
+        })
+    }
 
     let menuOptions =  [{name: 'Лични данни' , path: '/registration/personal-record'} , 
                             {name: 'Предпочитана ваксина' , path: '/registration/vaccine'} , 
                             {name: 'Ваксинационен център' , path: '/registration/location'}, 
                             {name: 'Час за ваксинация' , path: '/registration/time'}
                         ];
+    
+
 
     return(
         <div className="wrapper">
@@ -30,23 +86,25 @@ function Vaccine(props) {
 
             <span>Предпочитана ваксина</span>
 
-            <form action="">
+            <form onSubmit={onVaccinelDataSubmit}>
 
                 <div className={style.radioOptions}>
 
                     <div className={style.option}>
                     <input type="radio" id="rnk" name="vaccinePreference" value="rnk"
-                            checked />
+                           defaultChecked={temp.vaccinePreference == 'rnk'} />
                     <label for="rnk">иРНК</label>
                     </div>
 
                     <div className={style.option}>
-                    <input type="radio" id="adeno" name="vaccinePreference" value="adeno" />
+                    <input type="radio" id="adeno" name="vaccinePreference" value="adeno" 
+                            defaultChecked={temp.vaccinePreference == 'adeno'}/>
                     <label for="adeno">Аденовирусна</label>
                     </div>
 
                     <div className={style.option}>
-                    <input type="radio" id="none" name="vaccinePreference" value="none" />
+                    <input type="radio" id="none" name="vaccinePreference" value="none" 
+                            defaultChecked={temp.vaccinePreference == 'none'} />
                     <label for="none">Нямам предпочитания</label>
                     </div>
 
@@ -62,11 +120,8 @@ function Vaccine(props) {
 
                 <Button name={'Продължи'} />
 
-                
-            </form>
 
-
-            
+            </form>           
 
             </div>
         </div>
