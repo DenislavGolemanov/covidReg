@@ -3,6 +3,8 @@ import style from '../Registration/Registration.module.css'
 import React from 'react'
 import {Link} from 'react-router-dom'
 
+import * as regService from '../../services/regService'
+
 import Menu from '../Menu/Menu'
 import InputField from '../commonComponents/InputField/InputField'
 import SelectItem from '../commonComponents/SelectItem/SelectItem'
@@ -27,10 +29,20 @@ function Registration({history}) {
 
         temp = JSON.parse(value)
 
-    }   
+    }  
 
+    const [cities, setCities] = React.useState([]);
 
-    // console.log(data.firstName)
+    React.useEffect(() => {
+        regService.getCities()
+            .then(res => setCities(res));
+    }, [])
+
+    let choiceCities = cities
+    console.log(cities)
+
+    
+
 
     const onPersonalDataSubmit = (e) => {
         	
@@ -113,9 +125,12 @@ function Registration({history}) {
 
                                 data= {
                                     [
-                                        uniqid() , 'meanOfSignature' , 'ЕГН/ЛНЧ' , [ 'EGN' , 'LNC' ]
+                                        uniqid() , 'meanOfSignature' , [ 'EGN' , 'LNC' ]
                                     ]
                                 }
+
+                                options = {[ 'EGN' , 'LNC']}
+
                             />
                             <InputField value={temp.id || ''} key={uniqid()} data={["ЕГН" , "number" , "ID"]}/>
                             <InputField value={temp.dateBirth || ''} key={uniqid()} data={["Дата на раждане" , "date" , "dateBirth"]}/>
@@ -133,9 +148,13 @@ function Registration({history}) {
 
                                 data= {
                                     [
-                                        uniqid() , 'city' , 'Meстоживеене' , [ 'Ruse' , 'Varna' , 'Plovdiv' , 'Sofia' ]
+                                        uniqid() , 'city'  , ['sdsdd' , 'assaa']
                                     ]
                                 }
+
+                                options = {choiceCities}
+
+                                // cities = {this.cities}
                             />
                         </section>
 
@@ -151,9 +170,12 @@ function Registration({history}) {
 
                                 data= {
                                     [
-                                        uniqid() , 'meanOfContact' , 'Телефон/Имейл' , [ 'Phone' , 'Email' ]
+                                        uniqid() , 'meanOfContact'  , [ 'Phone' , 'Email' ]
                                     ]
                                 }
+
+                                options = {['Phone' , 'Email']}
+
                             />
                             <InputField value={temp.telNumber || ''} key={uniqid()} data={["Телефон" , "number" , "telNumber"]}/>
                             <InputField value={temp.email || ''} key={uniqid()} data={["Email" , "email" , "email"]}/>
@@ -165,7 +187,7 @@ function Registration({history}) {
 
                         <Back />
 
-                        <Button name="Продължи"/>
+                        <Button name={"Продължи"} />
 
                         </section>
 

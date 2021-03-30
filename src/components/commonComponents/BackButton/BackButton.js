@@ -6,6 +6,8 @@ function Button(props) {
 
     let history = useHistory()
 
+    let previous = props.path
+
     // let [id , name , placeholder , arrOptions] = props.data;
 
     // let listedOptions = []

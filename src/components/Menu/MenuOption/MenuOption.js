@@ -4,8 +4,6 @@ import style from '../MenuOption/MenuOption.module.css'
 
 function MenuOption(props) {
 
-    console.log()
-    console.log(props.data.path)
 
 
     if(window.location.pathname == props.data.path) {

@@ -2,16 +2,18 @@ import style from '../SelectItem/SelectItem.module.css'
 
 function SelectItem(props) {
 
-    let [id , name , placeholder , arrOptions] = props.data;
+    let [id , name , arrOptions] = props.data;
+
+    let opts = props.options
+
+    console.log(opts + 'from select Item')
 
     let listedOptions = []
 
-            arrOptions.forEach(opt =>{ 
-                
-                if(props.value == opt) {
+    // console.log(arrOptions)
 
-                    listedOptions.push(<option selected key={opt} value={opt}> {opt} </option>)
-                }
+            opts.forEach(opt =>{ 
+                
     
                 listedOptions.push(<option key={opt} value={opt}> {opt} </option>)
     

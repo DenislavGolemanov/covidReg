@@ -105,7 +105,7 @@ function Vaccine() {
 
                 <Back />
 
-                <Button name={'Продължи'} />
+                <Button name={'Продължи'}  />
 
                 </section>
 

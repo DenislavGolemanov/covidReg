@@ -16,6 +16,7 @@ const services = {
                                 .reverse()
                                 .join('.')
 
+
                 return {
                     date,
                     confirmed: TotalConfirmed,
