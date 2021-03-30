@@ -7,6 +7,8 @@ import Menu from '../Menu/Menu'
 import InputField from '../commonComponents/InputField/InputField'
 import SelectItem from '../commonComponents/SelectItem/SelectItem'
 import Button from '../commonComponents/Button/Button'
+import Back from '../commonComponents/BackButton/BackButton'
+
 
 
 
@@ -158,7 +160,16 @@ function Registration({history}) {
                 
                         </section>
 
+
+                        <section className='row'>
+
+                        <Back />
+
                         <Button name="Продължи"/>
+
+                        </section>
+
+
 
 
 
@@ -166,6 +177,7 @@ function Registration({history}) {
 
 
                 </section>
+
 
 
             </div>

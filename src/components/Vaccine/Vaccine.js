@@ -1,15 +1,20 @@
 import style from '../Vaccine/Vaccine.module.css'
 
-import {Link} from 'react-router-dom'
+import {useHistory , Link} from 'react-router-dom'
 import React from 'react'
 
 import Menu from '../Menu/Menu'
 import Button from '../commonComponents/Button/Button'
+import Back from '../commonComponents/BackButton/BackButton'
 
 
 
 
-function Vaccine({history}) {
+
+
+function Vaccine() {
+
+    let history = useHistory()
 
     const [value, setValue] = React.useState(
 
@@ -20,27 +25,6 @@ function Vaccine({history}) {
     if( value != '') {
 
         temp = JSON.parse(value)
-
-        // if(temp.vaccinePreference) {
-            
-        //     let inputs = Array.from(document.getElementsByTagName('INPUT'))
-
-        //    inputs.forEach((input)=> {if(input.value == temp.vaccinePreference) {
-
-
-        //     this.setState({
-        //         checked: true
-        //     })
-
-        //     input.checked = true;
-
-        //      console.log(input.checked)
-            
-
-        //    } else input.checked = false
-        // })
-
-        // }
 
     }   
 
@@ -117,11 +101,17 @@ function Vaccine({history}) {
                     </div>
                 </section>
 
+                <section className="row">
+
+                <Back />
 
                 <Button name={'Продължи'} />
 
+                </section>
 
-            </form>           
+
+            </form>  
+
 
             </div>
         </div>
