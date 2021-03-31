@@ -47,4 +47,12 @@
                         color: red;
                     
                     } 
+
+
+                    #mapid {
+
+                        height: 500px; 
+                        filter: grayscale(100%) sepia(100%) brightness(58%) hue-rotate(251deg) saturate(197%) contrast(199%) invert(100%);
+                        -webkit-filter: grayscale(100%) sepia(100%) brightness(58%) hue-rotate(251deg) saturate(197%) contrast(199%) invert(100%);
+                        -moz-filter: grayscale(100%) sepia(100%) brightness(58%) hue-rotate(251deg) saturate(197%) contrast(199%) invert(100%);}
                     

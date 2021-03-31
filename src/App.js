@@ -9,6 +9,7 @@ import About from '../src/components/About/About'
 import Registration from '../src/components/Registration/Registration'
 import Reservation from  '../src/components/Login/Login'
 import Vaccine from '../src/components/Vaccine/Vaccine'
+import VaccineCenter from '../src/components/VaccineCenter/VaccineCenter'
 
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/registration/personal-record" component={Registration} />
           <Route path="/registration/vaccine" component={Vaccine} />
           <Route path="/reservation" component={Reservation} />
+          <Route path="/registration/vaccine-center" component={VaccineCenter} />
 
       </Switch>
 
