@@ -52,6 +52,10 @@
                     #mapid {
 
                         height: 500px; 
+                        border: 30px 0px 30px 0px;
+                        border-radius: 9px;
+                        z-index: 0;
+                        
                         filter: grayscale(100%) sepia(100%) brightness(58%) hue-rotate(251deg) saturate(197%) contrast(199%) invert(100%);
                         -webkit-filter: grayscale(100%) sepia(100%) brightness(58%) hue-rotate(251deg) saturate(197%) contrast(199%) invert(100%);
                         -moz-filter: grayscale(100%) sepia(100%) brightness(58%) hue-rotate(251deg) saturate(197%) contrast(199%) invert(100%);}

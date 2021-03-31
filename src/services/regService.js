@@ -7,7 +7,20 @@ export const getCities = () => {
 
     return fetch(citiesUrl)
         .then((res) => res.json())
+        ///Formating here eventually
         // .then((json) => console.log(json))
 }
+
+export const getCityHospitals = (cityName) => {
+
+
+    let hospitals = baseUrl + `/${cityName}/hospitals`
+
+    return fetch(hospitals)
+        .then((res) => res.json())
+        // .then((json) => [json])
+}
+
+
 
 
