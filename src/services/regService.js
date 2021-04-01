@@ -18,7 +18,7 @@ export const getCityHospitals = (cityName) => {
 
     return fetch(hospitals)
         .then((res) => res.json())
-        // .then((json) => [json])
+
 }
 
 

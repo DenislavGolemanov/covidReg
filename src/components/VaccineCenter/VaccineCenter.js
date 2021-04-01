@@ -3,13 +3,15 @@ import style from '../VaccineCenter/VaccineCenter.module.css'
 import * as regService from '../../services/regService'
 
 
+
+
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import ReactDOM from 'react-dom'
 import * as L from 'leaflet'
 
 import Menu from '../Menu/Menu'
-// import SelectItem from '../commonComponents/SelectItem/SelectItem'
+import SelectItem from '../commonComponents/SelectItem/SelectItem'
 import Button from '../commonComponents/Button/Button'
 import Back from '../commonComponents/BackButton/BackButton'
 
@@ -28,8 +30,8 @@ class VaccineCenter extends Component {
         this.state = {
             hospitals : [],
             location : {},
-            cityName : ''
-
+            cityName : '',
+            hospitalOptions : []
         }
 
 
@@ -43,6 +45,11 @@ class VaccineCenter extends Component {
         }).addTo(map);
     }
 
+    // hospitalsOptions(hospitals) {
+
+
+    // }
+
 
 
     componentDidMount() {
@@ -51,15 +58,21 @@ class VaccineCenter extends Component {
         let cityName = JSON.parse(data).city
         
         regService.getCityHospitals(cityName)
-          .then(res=> this.setState({...res}))
-          .then(res => this.map(this.state.location))
-        
-      }
+            .then(res=> this.setState({...res}))
+            .then(res => this.map(this.state.location))
+            .then(res => console.log(this.state))
+            // .then((res) => {
+            //     let selectComponent = <SelectItem options={this.state.hospitalOptions} />
 
+            //     ReactDOM.render(selectComponent, document.getElementById('selectItem'))
+            // })
+
+
+    }
 
     render() {
 
-        let {location} = this.state
+        
 
 
         return (
@@ -78,20 +91,24 @@ class VaccineCenter extends Component {
 
                 <Menu data = {this.menuOptions}/>
 
+                <SelectItem 
+
+                                data= {
+                                    [
+                                        'hospitalSelect' , 'hospital'  , []
+                                    ]
+                                }
+
+                                options = {this.state.hospitals.map((obj) => obj.name)}
+
+                />
+
+                <br/>
+
+
                 <div id="mapid"></div>
 
-                {/* <MapContainer id="mapid" center={location} zoom={10} scrollWheelZoom={false}>
-                    <TileLayer
-                        id = "mapbox/satellite-v9"
-                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
-                    <Marker position={location}>
-                        <Popup>
-                        A pretty CSS3 popup. <br /> Easily customizable.
-                        </Popup>
-                    </Marker>
-                </MapContainer> */}
+               
 
                 <form>
 

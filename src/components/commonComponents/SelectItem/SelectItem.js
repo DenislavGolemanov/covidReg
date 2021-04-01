@@ -6,7 +6,7 @@ function SelectItem(props) {
 
     let opts = props.options
 
-    console.log(opts + 'from select Item')
+    // console.log(opts + 'from select Item')
 
     let listedOptions = []
 
