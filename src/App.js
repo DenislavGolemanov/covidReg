@@ -10,6 +10,7 @@ import Registration from '../src/components/Registration/Registration'
 import Reservation from  '../src/components/Login/Login'
 import Vaccine from '../src/components/Vaccine/Vaccine'
 import VaccineCenter from '../src/components/VaccineCenter/VaccineCenter'
+import TimeSchedule from './components/TimeSchedule/TimeSchedule';
 
 
 
@@ -28,6 +29,8 @@ function App() {
           <Route path="/registration/vaccine" component={Vaccine} />
           <Route path="/reservation" component={Reservation} />
           <Route path="/registration/vaccine-center" component={VaccineCenter} />
+          <Route path="/registration/time" component={TimeSchedule} />
+
 
       </Switch>
 

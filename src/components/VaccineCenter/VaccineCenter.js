@@ -6,7 +6,7 @@ import * as regService from '../../services/regService'
 
 
 import {Component} from 'react'
-import {Link} from 'react-router-dom'
+import {Link , withRouter} from 'react-router-dom'
 import ReactDOM from 'react-dom'
 import * as L from 'leaflet'
 
@@ -31,9 +31,11 @@ class VaccineCenter extends Component {
             hospitals : [],
             location : {},
             cityName : '',
-            hospitalOptions : []
+            hospitalOption : '',
         }
 
+
+        this.onPersonalDataSubmit = this.onPersonalDataSubmit.bind(this)
 
     }
 
@@ -45,10 +47,25 @@ class VaccineCenter extends Component {
         }).addTo(map);
     }
 
-    // hospitalsOptions(hospitals) {
 
+    onPersonalDataSubmit(e) {
 
-    // }
+        e.preventDefault()
+
+        const {history} = this.props
+
+        let temp = localStorage.getItem('tempStoring')
+        temp = JSON.parse(temp)
+
+        let input = e.target.hospital.value
+
+        temp.selectedHospital = input;
+
+        localStorage.setItem('tempStoring' , JSON.stringify(temp))
+
+        history.push('/registration/time')
+
+    }
 
 
 
@@ -60,13 +77,6 @@ class VaccineCenter extends Component {
         regService.getCityHospitals(cityName)
             .then(res=> this.setState({...res}))
             .then(res => this.map(this.state.location))
-            .then(res => console.log(this.state))
-            // .then((res) => {
-            //     let selectComponent = <SelectItem options={this.state.hospitalOptions} />
-
-            //     ReactDOM.render(selectComponent, document.getElementById('selectItem'))
-            // })
-
 
     }
 
@@ -91,30 +101,40 @@ class VaccineCenter extends Component {
 
                 <Menu data = {this.menuOptions}/>
 
-                <SelectItem 
+                <form onSubmit={this.onPersonalDataSubmit}>
 
-                                data= {
-                                    [
-                                        'hospitalSelect' , 'hospital'  , []
-                                    ]
-                                }
+                    <span>Моля изберете ваксинационен център в града посочен от Вас</span>
 
-                                options = {this.state.hospitals.map((obj) => obj.name)}
+                    <div className= {style.select}>
 
-                />
-
-                <br/>
+                        <SelectItem 
 
 
-                <div id="mapid"></div>
+                            data= {
+                                [
+                                    'hospitalSelect' , 'hospital'  , 'Ваксинационен център'
+                                ]
+                            }
 
+                            options = {this.state.hospitals.map((obj) => obj.name)}
+
+                            />
+
+                    </div>
                
 
-                <form>
 
-                
-                    <Back />
+
+                    <div id="mapid"></div>
+
+                <div className={style.buttons}>
+
+                    <Back/>
                     <Button  name="Продължи"/>
+
+
+                </div>
+                    
                 </form>
 
                 </div>
@@ -129,5 +149,5 @@ class VaccineCenter extends Component {
 }
 
 
-export default VaccineCenter
+export default withRouter(VaccineCenter)
 

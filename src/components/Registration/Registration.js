@@ -125,7 +125,7 @@ function Registration({history}) {
 
                                 data= {
                                     [
-                                        uniqid() , 'meanOfSignature' , [ 'EGN' , 'LNC' ]
+                                        uniqid() , 'meanOfSignature' , 'ЕГН/ЛНЧ'
                                     ]
                                 }
 
@@ -148,7 +148,7 @@ function Registration({history}) {
 
                                 data= {
                                     [
-                                        uniqid() , 'city'  , ['sdsdd' , 'assaa']
+                                        uniqid() , 'city'  , 'Местоживеене'
                                     ]
                                 }
 
@@ -170,7 +170,7 @@ function Registration({history}) {
 
                                 data= {
                                     [
-                                        uniqid() , 'meanOfContact'  , [ 'Phone' , 'Email' ]
+                                        uniqid() , 'meanOfContact'  , 'Контакт'
                                     ]
                                 }
 

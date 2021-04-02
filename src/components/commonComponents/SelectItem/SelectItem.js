@@ -2,15 +2,15 @@ import style from '../SelectItem/SelectItem.module.css'
 
 function SelectItem(props) {
 
-    let [id , name , arrOptions] = props.data;
+    let [id , name , placeholder] = props.data;
 
     let opts = props.options
-
-    // console.log(opts + 'from select Item')
 
     let listedOptions = []
 
     // console.log(arrOptions)
+
+
 
             opts.forEach(opt =>{ 
                 
@@ -24,8 +24,8 @@ function SelectItem(props) {
 
     return(
 
-        <select className={style.select} id={id} name={name}>
-            {/* <option value='' disabled selected> {placeholder}</option> */}
+        <select className={style.select} id={id} name={name} onChange = {props.onChange}>
+            <option value='' disabled selected> {placeholder}</option>
                 {
                    listedOptions
                 }

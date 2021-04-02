@@ -22,5 +22,19 @@ export const getCityHospitals = (cityName) => {
 }
 
 
+export const getHospitalAvailability = (cityName , selectedHospital) => {
+
+
+    let availability = baseUrl + `/${cityName}/${selectedHospital}`
+
+
+    return fetch(availability)
+        .then((res) => res.json())
+        // .then((json) => console.log(json))
+        // .then((json) => [json])
+
+}
+
+
 
 
